@@ -14,20 +14,13 @@ const Tab = createBottomTabNavigator();
 
 export default function App() {
 
-  const StackNavigation = () =>{
-    return(
-        <Stack.Navigator>
-          <Stack.Screen name={'home'} component={CameraScreen} options={{headerShown: false}} />
-          <Stack.Screen name={'image'} component={ImageScreen} />
-        </Stack.Navigator>
-    )
-  }
-
+    /*Bruger stack navigator til at vise billeder taget fra app*/
   return(
       <NavigationContainer>
-          <Tab.Navigator>
-              <Tab.Screen name={'Camera'} component={StackNavigation} options={{tabBarIcon: () => ( <Ionicons name="camera" size={20} />),headerShown:false}}/>
-          </Tab.Navigator>
+          <Stack.Navigator>
+              <Stack.Screen name={'home'} component={CameraScreen} options={{headerShown: false}} />
+              <Stack.Screen name={'image'} component={ImageScreen} />
+          </Stack.Navigator>
       </NavigationContainer>
   )
 }

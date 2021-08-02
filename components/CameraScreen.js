@@ -9,10 +9,10 @@ const CameraScreen = ({navigation}) => {
 
     const cameraRef = useRef();
     const [hasPermission, setHasPermission] = useState(null);
-    const [hasGalleryPermission, setHasGalleryPermission] = useState(null);
     const [imagesArr, setImagesArr] = useState([]);
     const [type, setType] = useState(Camera.Constants.Type.back);
 
+    /*UseEffect kører når komponenten bliver kørt ved hvert render*/
     useEffect(() => {
         (async () => {
             /*Få camera permissions*/
@@ -56,10 +56,10 @@ const CameraScreen = ({navigation}) => {
                     {
                         imagesArr.length > 0
                             ? imagesArr.map((image,index) => (
-                                <TouchableOpacity key={index} style={{paddingHorizontal:10}} onPress={() => navigation.navigate('image',{image:image.uri}) } >
-                                    <Image source={{ uri: image.uri }} style={{ width: 100, height: 200 }} />
-                                </TouchableOpacity>
-                            ))
+                                    <TouchableOpacity key={index} style={{paddingHorizontal:10}} onPress={() => navigation.navigate('image',{image:image.uri}) } >
+                                        <Image source={{ uri: image.uri }} style={{ width: 100, height: 200 }} />
+                                    </TouchableOpacity>
+                                ))
                             : <Text style={{color:"white"}}> No images taken </Text>
                     }
                 </ScrollView>
@@ -116,7 +116,6 @@ const CameraScreen = ({navigation}) => {
                                 <Text style={styles.text}> Galleri </Text>
                             </TouchableOpacity>
                         </View>
-
                         <CameraGallery/>
 
                     </View>

@@ -5,9 +5,9 @@ const ImageScreen = ({route}) => {
 
     const [image,setImage] = useState('')
 
+    /**/
     useEffect(() => {
-
-        setImage(route.params.image)
+        setImage(route.params.image);
 
         return () => {
             setImage('')
@@ -16,7 +16,11 @@ const ImageScreen = ({route}) => {
 
     return(
         <View>
-            <Image source={{ uri: image ?  image : null }} width={Dimensions.get('window').width} height={Dimensions.get('window').height} />
+            <Image
+                source={{ uri: image ?  image : null }}
+                width={Dimensions.get('window').width}
+                height={Dimensions.get('window').height}
+            />
         </View>
     )
 }
