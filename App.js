@@ -8,12 +8,12 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 import ImageScreen from "./components/ImageScreen";
 
 
-const Stack = createStackNavigator();
-const Tab = createBottomTabNavigator();
+
 
 
 export default function App() {
 
+    const Stack = createStackNavigator();
     /*Bruger stack navigator til at vise billeder taget fra app*/
   return(
       <NavigationContainer>
