@@ -5,7 +5,7 @@ const ImageScreen = ({route}) => {
 
     const [image,setImage] = useState('')
 
-    /**/
+    /* du sætter billedet fra dine parameter og i return fjerne du val*/
     useEffect(() => {
         setImage(route.params.image);
 
